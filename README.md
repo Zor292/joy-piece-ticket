@@ -1,51 +1,25 @@
-# JoyPiece Ticket Bot v2
+# JoyPiece Ticket Bot v3
 
-## Railway Secrets (Environment Variables)
+## Railway Variables
 
 | Variable | Value |
 |---|---|
-| `DISCORD_TOKEN` | توكن البوت من Discord Developer Portal |
+| `DISCORD_TOKEN` | توكن البوت |
 | `CLIENT_ID` | Client ID للبوت |
 | `GUILD_ID` | ID السيرفر |
+| `MONGODB_URI` | mongodb+srv://jp1_2026:zoro_amak3@cluster0.gzhivoi.mongodb.net/islam-bot |
 
----
+## Start Command
+```
+npm start
+```
 
-## الخطوات
+## اسم التذاكر
+ticket-1-username
+ticket-2-username
+...
 
-### 1. Discord Developer Portal
-- https://discord.com/developers/applications
-- New Application → Bot → Reset Token → انسخ التوكن
-- Privileged Gateway Intents: فعّل الثلاث (Presence, Server Members, Message Content)
-- OAuth2 → URL Generator → اختر `bot` → Permissions: **Administrator**
-- ادخل البوت للسيرفر
-
-### 2. Railway
-- ارفع الملفات او اربط GitHub
-- اضف Variables من الجدول اعلاه
-- Start Command: `npm start`
-
----
-
-## الاوامر (البادئة: !)
-
-**نظام التذاكر:**
-`!tickets` `!close` `!add` `!remove` `!rename` `!claim` `!ticketinfo` `!tickets-list`
-
-**الادارة:**
-`!ban` `!unban` `!kick` `!mute` `!unmute` `!warn` `!clearwarns` `!clear` `!slowmode`
-`!lock` `!unlock` `!lockdown` `!unlockdown` `!nick` `!setnick`
-`!role-add` `!role-remove` `!massrole` `!removeallrole` `!setcolor` `!sethoist` `!setmentionable`
-`!banlist` `!move` `!deafen` `!undeafen` `!voicemute` `!voiceunmute`
-
-**المعلومات:**
-`!userinfo` `!serverinfo` `!roleinfo` `!avatar` `!ping` `!botinfo` `!members`
-`!channels` `!roles` `!id` `!emojis` `!boosts` `!whois` `!invites` `!inviteinfo` `!joinpos`
-
-**القنوات:**
-`!topic` `!nuke` `!create-channel` `!delete-channel` `!create-role` `!delete-role`
-
-**الرسائل:**
-`!say` `!announce` `!embed` `!dm` `!poll` `!pin` `!unpin` `!repeat`
-
-**متنوع:**
-`!8ball` `!coin` `!dice` `!choose` `!afk` `!unafk` `!uptime` `!calc` `!encode` `!decode` `!stats` `!help`
+## قاعدة البيانات
+- التذاكر محفوظة في MongoDB (تبقى بعد إعادة تشغيل البوت)
+- التحذيرات محفوظة في MongoDB
+- العداد محفوظ في MongoDB (لا يعود للصفر)
